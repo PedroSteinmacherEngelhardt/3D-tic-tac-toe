@@ -1,0 +1,140 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1a6353;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.display {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    height: 30px;
+}
+
+.hide{
+    display: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    height: 35vh;
+}
+
+.board {
+    margin: 10px;
+    display: grid;
+    height: 30vh;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+.tile {
+    border: 1px solid white;
+    width: 8vh;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 7vh;
+    cursor: pointer;
+}
+
+.display-cube {
+    height: 30vh;
+}
+
+.cube{
+    height: 20vh;
+    width: 20vh;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%,25%) rotateX(0deg) rotateY(0deg);
+    animation: rotate-cube 7s linear normal infinite;
+    transform-style: preserve-3d;
+}
+
+.display-face {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#face1 {
+    background:rgba(68, 184, 238, 0.5);
+    transform: translateZ(60px);
+}
+#face2 {
+    background:rgba(218, 221, 59, 0.507);
+    transform: translateZ(20px)
+}
+#face3 {
+    background:rgba(177, 124, 27, 0.5);
+    transform: translateZ(-20px)
+}
+#face4 {
+    background:rgba(207, 56, 56, 0.5);
+    transform: translateZ(-60px)
+}
+
+.display-board {
+    display: grid;    
+    grid-template-columns: repeat(4,1fr);
+    height: 100%;
+    width: 100%;
+}
+
+.display-tile {
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 4vh;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls button {
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#reset{
+    background-color: #FF3860;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@keyframes rotate-cube {
+    0% { transform: translate(50%,25%) rotateZ(0deg) rotateY(0deg);}
+    100% {transform: translate(50%,25%) rotateZ(0deg) rotateY(360deg);}
+}
+
+.red {
+    background-color: red;
+}

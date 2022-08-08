@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Tic-tac-toe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <script src="main.js"></script>
+</head>
+<body>
+    <main>
+        <section class="title">
+            <h1>3D Tic-tac-toe</h1>
+        </section>
+        <section class="display">
+            Player X turn
+        </section>
+        <section class="container">
+            <section class="board">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </section>
+            <section class="board">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </section>
+            <section class="board">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </section>
+            <section class="board">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </section>
+        </section>
+        <section class="display-cube">
+            <cube class="cube">
+                <face class="display-face" id="face1">
+                    <board class="display-board">
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                    </board>
+                </face>
+                <face class="display-face" id="face2">
+                    <board class="display-board">
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                    </board>
+                </face>
+                <face class="display-face" id="face3">
+                    <board class="display-board">
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                    </board>
+                </face>
+                <face class="display-face" id="face4">
+                    <board class="display-board">
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                        <tile class="display-tile"> </tile>
+                    </board>
+                </face>
+            </cube>
+        </section>
+        <section class="controls">
+            <button id="reset">reset</button>
+        </section>
+    </main>
+</body>
+</html>
