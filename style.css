@@ -1,4 +1,3 @@
-
 * {
     padding: 0;
     margin: 0;
@@ -24,7 +23,7 @@ body {
     height: 30px;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
@@ -58,42 +57,45 @@ body {
     height: 30vh;
 }
 
-.cube{
+.cube {
     height: 20vh;
     width: 20vh;
     position: absolute;
     right: 50%;
-    transform: translate(50%,25%) rotateX(0deg) rotateY(0deg);
+    transform: translate(50%, 25%) rotateX(0deg) rotateY(0deg);
     animation: rotate-cube 7s linear normal infinite;
     transform-style: preserve-3d;
 }
 
 .display-face {
-    height: 100%;
+    height: 120%;
     width: 100%;
     position: absolute;
 }
 
 #face1 {
-    background:rgba(68, 184, 238, 0.5);
+    background: rgba(68, 184, 238, 0.5);
     transform: translateZ(60px);
 }
+
 #face2 {
-    background:rgba(218, 221, 59, 0.507);
+    background: rgba(218, 221, 59, 0.507);
     transform: translateZ(20px)
 }
+
 #face3 {
-    background:rgba(177, 124, 27, 0.5);
+    background: rgba(177, 124, 27, 0.5);
     transform: translateZ(-20px)
 }
+
 #face4 {
-    background:rgba(207, 56, 56, 0.5);
+    background: rgba(207, 56, 56, 0.5);
     transform: translateZ(-60px)
 }
 
 .display-board {
-    display: grid;    
-    grid-template-columns: repeat(4,1fr);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     height: 100%;
     width: 100%;
 }
@@ -120,7 +122,7 @@ body {
     cursor: pointer;
 }
 
-#reset{
+#reset {
     background-color: #FF3860;
     color: white;
     padding: 8px;
@@ -131,8 +133,13 @@ body {
 }
 
 @keyframes rotate-cube {
-    0% { transform: translate(50%,25%) rotateZ(0deg) rotateY(0deg);}
-    100% {transform: translate(50%,25%) rotateZ(0deg) rotateY(360deg);}
+    0% {
+        transform: translate(50%, 25%) rotateZ(0deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: translate(50%, 25%) rotateZ(0deg) rotateY(360deg);
+    }
 }
 
 .red {
