@@ -13,7 +13,12 @@ window.addEventListener('DOMContentLoaded', () => {
     resetButton.addEventListener('click', () => reset());
 
     tiles.forEach((tile, index) => {
-        tile.addEventListener('click', () => handleUserInput(tile, index));
+        tile.addEventListener('click', () => {
+            if (isGameActive && tile.innerText == '') {
+                handleUserInput(tile, index)
+                bestMove()
+            }
+        });
     });
 });
 
@@ -30,21 +35,18 @@ let isGameActive = true;
 let currentPlayer = 'X'
 
 function handleUserInput(tile, index) {
-    if (isGameActive) {
-        if (tile.innerText == '') {
-            tile.innerText = currentPlayer;
-            displayTiles[index].innerText = currentPlayer;
-            gameBoard[index] = currentPlayer
-            checkVitory(index, gameBoard, currentPlayer);
-            changePlayer();
-        }
+    if (isGameActive && tile.innerText == '') {
+        tile.innerText = currentPlayer;
+        displayTiles[index].innerText = currentPlayer;
+        gameBoard[index] = currentPlayer
+        checkVictory(index, gameBoard, currentPlayer, true);
+        changePlayer();
     }
 }
 
-function checkVitory(index, board, currentPlayer) {
+function checkVictory(index, board, currentPlayer, shouldWin) {
     let won = 0;
     let moves = [];
-    console.log(index)
     for (let direction = 0; direction < 26; direction++) {
         if (direction % 2 == 0) {
             won = 0;
@@ -58,7 +60,8 @@ function checkVitory(index, board, currentPlayer) {
 
             if (won == 3) {
                 moves.push(index);
-                win(moves);
+                if (shouldWin) { win(moves); }
+
                 return true
             }
         }
