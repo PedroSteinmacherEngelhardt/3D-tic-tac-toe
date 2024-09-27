@@ -1,6 +1,6 @@
 function bestMove() {
     let bestScore = -Infinity;
-    let move;
+    let move = [];
     let player = currentPlayer;
     isGameActive = false
     for (let i = 0; i < 64; i++) {
@@ -10,23 +10,25 @@ function bestMove() {
             gameBoard[i] = '';
             if (score > bestScore) {
                 bestScore = score;
-                move = i;
+                move = [i];
+            } else if (score == bestScore) {
+                move.push(i)
             }
         }
     }
 
     isGameActive = true
-
-    handleUserInput(tiles[move], move)
+    const randomBestMove = move[Math.floor(Math.random() * move.length)];
+    handleUserInput(tiles[randomBestMove], randomBestMove)
 }
 
 function minimax(move, depth, isMaximizing, player, alpha = -Infinity, beta = Infinity) {
     let result = checkVictory(move, gameBoard, player, false);
     if (result) {
-        return player == currentPlayer ? 10 : -10;
+        return player == currentPlayer ? 10  / depth : -10 * depth;
     }
 
-    if (gameBoard.find((e) => e == '') == undefined || depth > 3) {
+    if (gameBoard.find((e) => e == '') == undefined || depth > 2) {
         return 0;
     }
 

@@ -14,10 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     tiles.forEach((tile, index) => {
         tile.addEventListener('click', () => {
-            if (isGameActive && tile.innerText == '') {
-                handleUserInput(tile, index)
-                bestMove()
-            }
+            let uhum = handleUserInput(tile, index)
+            if (uhum && isGameActive) bestMove()
         });
     });
 });
@@ -41,7 +39,9 @@ function handleUserInput(tile, index) {
         gameBoard[index] = currentPlayer
         checkVictory(index, gameBoard, currentPlayer, true);
         changePlayer();
+        return true
     }
+    return false
 }
 
 function checkVictory(index, board, currentPlayer, shouldWin) {
